@@ -29,5 +29,5 @@ jobs:
           git pull origin main
           git status
           cd client
-          npm install --only=prod
+          npm install
           npm run build
