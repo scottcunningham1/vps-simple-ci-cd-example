@@ -26,7 +26,7 @@ jobs:
         port: 22
         script: |
           cd ~/vps-simple-ci-cd-example
-          git pull origin master
+          git pull origin main
           git status
           cd client
           npm install --only=prod
