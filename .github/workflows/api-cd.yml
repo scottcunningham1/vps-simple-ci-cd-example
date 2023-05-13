@@ -30,10 +30,8 @@ jobs:
           cd ~/vps-simple-ci-cd-example
           cd api
           rm .env
-          rm package-lock.json
           git pull origin main
           git status
-          cd api
           touch .env
           echo TEST_KEY=$TEST_KEY >> .env
           npm ci
