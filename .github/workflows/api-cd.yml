@@ -7,9 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ main ]
-    
-env:
-  TEST_KEY: ${{ secrets.TEST_KEY }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,7 +31,7 @@ jobs:
           git pull origin main
           git status
           touch .env
-          echo TEST_KEY=$TEST_KEY >> .env
+          echo TEST_KEY=${{ secrets.USERNAME }} >> .env
           npm ci
           npm run build
           pm2 restart api
