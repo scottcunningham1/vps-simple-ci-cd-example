@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/environment', (req, res) => {
-    res.send(JSON.stringify(process.env.env));
+    res.send(process.env.TEST_KEY);
 });
 
 app.listen(8000, () => {
