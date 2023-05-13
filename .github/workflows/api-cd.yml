@@ -31,6 +31,6 @@ jobs:
           cd api
           touch .env
           echo TEST_KEY=$TEST_KEY >> .env
-          npm install
+          npm ci
           npm run build
           pm2 restart api
