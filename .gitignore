@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 node_modules/
-=======
-node_modules
->>>>>>> 12ea156ebcd7a2adc945d4560dea62191013a5fd
+dist/
