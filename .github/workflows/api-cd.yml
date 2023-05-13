@@ -28,6 +28,9 @@ jobs:
         port: 22
         script: |
           cd ~/vps-simple-ci-cd-example
+          cd api
+          rm .env
+          rm package-lock.json
           git pull origin main
           git status
           cd api
