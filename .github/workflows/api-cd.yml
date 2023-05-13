@@ -28,15 +28,9 @@ jobs:
           cd ~/vps-simple-ci-cd-example
           git pull origin main
           git status
-    - name: Create and populate .env file
-      env:
-        TEST_KEY: ${{ secrets.TEST_KEY }}
-      run: |
-        touch .env
-        echo TEST_KEY=$TEST_KEY >> .env
-    - name: Build API application
-      run: |
-        cd ~/vps-simple-ci-cd-example/api
-        npm install
-        npm run build
-        pm2 restart api
+          cd api
+          touch .env
+          echo TEST_KEY=$TEST_KEY >> .env
+          npm install
+          npm run build
+          pm2 restart api
