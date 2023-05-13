@@ -1,6 +1,9 @@
 import express from 'express';
 
 const app = express();
+
+console.log(process.env);
+
 app.get('/', (req, res) => {
   res.send('API is running!')
 });
