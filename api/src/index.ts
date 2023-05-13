@@ -2,7 +2,7 @@ import express from 'express';
 
 const app = express()
 app.get('/', (req, res) => {
-  res.send('Welcome to node.js world!!')
+  res.send('API is running!')
 });
 
 app.listen(8000, () => {
