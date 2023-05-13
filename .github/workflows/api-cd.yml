@@ -19,6 +19,8 @@ jobs:
     steps:
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
+      env:
+        TEST_KEY: ${{ secrets.TEST_KEY }}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -31,6 +33,6 @@ jobs:
           cd api
           touch .env
           echo TEST_KEY=$TEST_KEY >> .env
-          npm install
+          npm ci
           npm run build
           pm2 restart api
