@@ -5,14 +5,14 @@ const app = express();
 
 dotenv.config();
 
-console.log(process.env);
+console.log(process.env.TEST_KEY);
 
 app.get('/', (req, res) => {
   res.send('API is running!')
 });
 
 app.get('/environment', (req, res) => {
-    res.send(process.env);
+    res.send(JSON.stringify(process.env.env));
 });
 
 app.listen(8000, () => {
