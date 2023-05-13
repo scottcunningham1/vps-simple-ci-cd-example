@@ -32,7 +32,7 @@ jobs:
       env:
         TEST_KEY: ${{ secrets.TEST_KEY }}
       run: |
-        touch api/.env
+        touch .env
         echo TEST_KEY=$TEST_KEY >> .env
     - name: Build API application
       run: |
