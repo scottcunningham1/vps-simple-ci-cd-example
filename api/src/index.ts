@@ -16,5 +16,5 @@ app.get('/environment', (req, res) => {
 });
 
 app.listen(8000, () => {
-  console.log('The application is listening on port 8000...')
+  console.log('The api is listening on port 8000...')
 });
