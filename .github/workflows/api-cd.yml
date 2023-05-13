@@ -7,6 +7,9 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ main ]
+    
+env:
+  TEST_KEY: ${{ secrets.TEST_KEY }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,8 +22,6 @@ jobs:
     steps:
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
-      env:
-        TEST_KEY: ${{ secrets.TEST_KEY }}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
