@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ main ]
-env:
-  env_var: testing123
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -30,7 +28,16 @@ jobs:
           cd ~/vps-simple-ci-cd-example
           git pull origin main
           git status
-          cd api
-          npm install
-          npm run build
-          pm2 restart api
+    - name: Create and populate .env file
+      env:
+        TEST_KEY: ${{ secrets.TEST_KEY }}
+      run: |
+        cd ~/vps-simple-ci-cd-example/api
+        touch .env
+        echo TEST_KEY=$TEST_KEY >> .env
+    - name: Build API application
+      run: |
+        cd ~/vps-simple-ci-cd-example/api
+        npm install
+        npm run build
+        pm2 restart api
