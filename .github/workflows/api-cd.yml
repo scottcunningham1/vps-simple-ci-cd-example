@@ -31,7 +31,7 @@ jobs:
           git pull origin main
           git status
           touch .env
-          echo TEST_KEY=${{ secrets.USERNAME }} >> .env
+          echo TEST_KEY=${{ secrets.TEST_KEY }} >> .env
           npm ci
           npm run build
           pm2 restart api
